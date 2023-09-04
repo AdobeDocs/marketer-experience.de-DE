@@ -1,20 +1,20 @@
 ---
-user-guide-title: Marketing-Erlebnis
-breadcrumb-title: Marketing-Erlebnis
-user-guide-description: Benutzerhandbuch zu Marketing-Erlebnissen
+user-guide-title: Marketer Experience
+breadcrumb-title: Marketer Experience
+user-guide-description: Marketer Experience – Benutzerhandbuch.
 source-git-commit: a3eef4938f645e4db1db335aa36d988c93921f18
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '21'
-ht-degree: 9%
+ht-degree: 100%
 
 ---
 
 
-# Marketing-Erlebnis {#using}
+# Marketer Experience {#using}
 
-+ [Marketer-Erlebnis - Startseite](home.md)
-+ Verstärken {#amplify}
++ [Marketer Experience – Startseite](home.md)
++ Amplify {#amplify}
    + [Übersicht](amplify/overview.md)
-+ Anwendungsbeispiele für Playbooks {#use-case-playbooks}
++ Anwendungsfall-Playbooks {#use-case-playbooks}
    + [Übersicht](use-case-playbooks/overview.md)
-   + [Einzelereignis](use-case-playbooks/unitary-event.md)
+   + [Unitäres Ereignis](use-case-playbooks/unitary-event.md)

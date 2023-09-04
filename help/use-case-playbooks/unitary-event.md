@@ -1,104 +1,104 @@
 ---
-title: Einzelereignis
-description: Dies ist eine Einleitungsseite zur Simulation des[!UICONTROL Einzelereignis]" Typ der Journey-Validierung.
+title: Unitäres Ereignis
+description: Dies ist eine Anleitungsseite für die Simulation des Typs [!UICONTROL Unitäres Ereignis] der Journey-Validierung.
 source-git-commit: 0a52611530513fc036ef56999fde36a32ca0f482
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '749'
-ht-degree: 0%
+ht-degree: 100%
 
 ---
 
 
-# Einzelereignis
+# Unitäres Ereignis
 
-## Schritte, die ausgeführt werden müssen {#steps-to-follow}
+## Zu befolgende Schritte {#steps-to-follow}
 
 >[!CONTEXTUALHELP]
 >id="marketerexp_sampledata_unitaryevent"
->title="Wie ist es anzuwenden?"
->abstract="Weitere Informationen finden Sie unter dem Link ."
+>title="Wie wird sie verwendet?"
+>abstract="Bitte folgen Sie dem Link für weitere Informationen"
 
 >[!IMPORTANT]
 >
->Diese Anweisungen ändern sich möglicherweise in **[!UICONTROL Playbook]** Daher sollten Sie immer den Abschnitt Beispieldaten der jeweiligen **[!UICONTROL Playbook]**.
+>Diese Anweisungen können sich je nach **[!UICONTROL Playbook]** ändern, daher sollten Sie immer den Abschnitt „Beispieldaten“ im jeweiligen **[!UICONTROL Playbook]** lesen.
 
 ## Voraussetzung
 
 * Sie müssen die Postman-Software installiert haben
-* Verwenden Sie das Playbook, um Instanzen wie **[!UICONTROL Journey]**, **[!UICONTROL Schemas]**, **[!UICONTROL Segmente]**, **[!UICONTROL Nachrichten]** usw.
+* Verwenden Sie das Playbook, um die Instanzen-Assets wie **[!UICONTROL Journey]**, **[!UICONTROL Schemata]**, **[!UICONTROL Segmente]**, **[!UICONTROL Nachrichten]** usw. zu erstellen.
 
-Erstellte Assets werden in `Bill Of Material` Seite
+Die erstellten Assets werden auf der Seite `Bill Of Material` angezeigt.
 
-![Rechnungsseite](../assets/bom-page.png)
+![Seite „Stückliste“](../assets/bom-page.png)
 
-## Postman mit erforderlicher Sammlung vorbereiten
+## Vorbereiten von Postman mit erforderlicher Sammlung
 
-1. Besuch **[!UICONTROL Anwendungsbeispiel Playbook]** Anwendung.
-1. Klicken Sie auf die entsprechenden **[!UICONTROL Playbook]** Karte zum Besuch **[!UICONTROL Playbook]** Detailseite.
-1. Besuch **[!UICONTROL Materialrechnung]** und suchen Sie nach **[!UICONTROL Beispieldaten]** Abschnitt.
-1. Laden Sie die `postman.json` durch Klicken auf die entsprechenden Schaltflächen in der Benutzeroberfläche.
-1. Import `postman.json` im **[!DNL Postman Software]**.
-1. Erstellen Sie eine dedizierte Postman-Umgebung für diese Validierung (z. B. `Adobe <PLAYBOOK_NAME>`).
+1. Besuchen Sie die Anwendung **[!UICONTROL Anwendungsfall-Playbook]**.
+1. Klicken Sie auf die jeweilige **[!UICONTROL Playbook]**-Karte, um zur **[!UICONTROL Playbook]**-Detailseite zu gelangen.
+1. Besuchen Sie die Seite **[!UICONTROL Stückliste]** und finden Sie den Abschnitt **[!UICONTROL Beispieldaten]**.
+1. Laden Sie die `postman.json` herunter, indem Sie auf die entsprechenden Schaltflächen in der Benutzeroberfläche klicken.
+1. Importieren Sie `postman.json` in die **[!DNL Postman Software]**.
+1. Erstellen Sie eine eigene Postman-Umgebung für diese Validierung (z. B. `Adobe <PLAYBOOK_NAME>`).
 
 ## Abrufen des IMS-Tokens
 
 >[!NOTE]
 >
->Bei allen Umgebungsvariablen wird zwischen Groß- und Kleinschreibung unterschieden. Verwenden Sie daher immer den genauen Variablennamen.
+>Bei allen Umgebungsvariablen wird zwischen Groß- und Kleinschreibung unterschieden, verwenden Sie also bitte immer den genauen Variablennamen.
 
-1. Bitte folgen Sie [Experience Platform-APIs authentifizieren und aufrufen](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html) Dokumentation zum Generieren des Zugriffstokens.
-1. Speichern Sie den Zugriffstoken -Wert in Umgebungsvariablen mit dem Namen `ACCESS_TOKEN`.
-1. Andere authentifizierungsbezogene Werte wie speichern `API_KEY`, `IMS_ORG` und `SANDBOX_NAME` in Umgebungsvariablen.
+1. Bitte folgen Sie der Dokumentation [Authentifizieren und Aufrufen von Experience Platform-APIs](https://experienceleague.adobe.com/docs/experience-platform/landing/platform-apis/api-authentication.html?lang=de), um das Zugriffs-Token zu generieren.
+1. Speichern Sie den Wert des Zugriffs-Tokens in einer Umgebungsvariablen namens `ACCESS_TOKEN`.
+1. Speichern Sie andere authentifizierungsbezogene Werte wie `API_KEY`, `IMS_ORG` und `SANDBOX_NAME` in Umgebungsvariablen.
 
 >[!IMPORTANT]
 >
->Stellen Sie vor dem Ausführen einer API aus Postman sicher, dass alle erforderlichen Umgebungsvariablen hinzugefügt werden müssen.
+>Bevor Sie eine API von Postman ausführen, müssen Sie sicherstellen, dass alle erforderlichen Umgebungsvariablen hinzugefügt wurden.
 
-## Veröffentlichen der von Playbook erstellten Journey
+## Veröffentlichen der vom Playbook erstellten Journey
 
-Es gibt 2 Möglichkeiten, die Journey zu veröffentlichen. Sie können eine davon auswählen:
+Es gibt zwei Möglichkeiten, die Journey zu veröffentlichen. Sie können beliebig zwischen ihnen wählen:
 
-1. **Verwenden der AJO-Benutzeroberfläche** - Klicken Sie auf den Journey-Link auf `Bill Of Material Page`Sie werden zur Journey-Seite weitergeleitet, auf die Sie klicken können. **[!UICONTROL Veröffentlichen]** Schaltfläche und Journey veröffentlicht werden.
+1. **Verwenden der AJO-Benutzeroberfläche** – Klicken Sie auf den Journey-Link auf der `Bill Of Material Page`. Dadurch werden Sie zur Journey-Seite umgeleitet, wo Sie auf die Schaltfläche **[!UICONTROL Veröffentlichen]** klicken können, damit die Journey veröffentlicht wird.
 
    ![Journey-Objekt](../assets/journey-object.png)
 
 1. **Verwenden der Postman-API**
 
-   1. Trigger **[!DNL Publish Journey]** Anfrage von **[!DNL Journey Publish]** > **[!DNL Queue journey publish job]**.
-   1. Journey-Publish kann einige Zeit in Anspruch nehmen. Um den Status zu überprüfen, führen Sie die API zum Überprüfen des Journey-Veröffentlichungsstatus aus, bis die `response.status` is `SUCCESS`, stellen Sie sicher, dass Sie 10-15 Sekunden warten, wenn die Journey-Veröffentlichung zeitaufwendig ist.
+   1. Lösen Sie eine **[!DNL Publish Journey]**-Anfrage über **[!DNL Journey Publish]** > **[!DNL Queue journey publish job]** aus.
+   1. Die Veröffentlichung einer Journey kann einige Zeit in Anspruch nehmen. Um den Status zu überprüfen, führen Sie die API „Journey-Veröffentlichungsstatus überprüfen“ aus, bis `response.status` `SUCCESS` ist. Warten Sie 10–15 Sekunden, wenn die Veröffentlichung der Journey einige Zeit dauert.
 
    >[!NOTE]
    >
-   >Bei allen Umgebungsvariablen wird zwischen Groß- und Kleinschreibung unterschieden. Verwenden Sie daher immer den genauen Variablennamen.
+   >Bei allen Umgebungsvariablen wird zwischen Groß- und Kleinschreibung unterschieden, verwenden Sie also bitte immer den genauen Variablennamen.
 
-## Kundenprofil erfassen
+## Aufnehmen des Kundenprofils
 
 >[!TIP]
 >
->Sie können dieselbe E-Mail-Adresse wiederverwenden, indem Sie `+<variable>` in Ihre E-Mail, z. B. `usertest@email.com` kann fortgesetzt werden als `usertest+v1@email.com` oder `usertest+24jul@email.com`. Dies wäre hilfreich, jedes Mal ein neues Profil zu haben, aber immer noch dieselbe E-Mail-ID zu verwenden.
+>Sie können dieselbe E-Mail-Adresse wiederverwenden, indem Sie `+<variable>` in Ihrer E-Mail-Adresse anhängen. So kann z. B. `usertest@email.com` als `usertest+v1@email.com` oder `usertest+24jul@email.com` wiederverwendet werden. Dies kann hilfreich sein, wenn jedes Mal ein neues Profil, jedoch mit derselben E-Mail-ID, verwendet werden soll.
 
-1. Erstmaliger Benutzer muss die **[!DNL customer dataset]** und **[!DNL HTTP Streaming Inlet Connection]**.
-1. Wenn Sie bereits die **[!DNL customer dataset]** und **[!DNL HTTP Streaming Inlet Connection]**, überspringen Sie bitte zum Schritt . `5`.
-1. Trigger **[!DNL Customer Profile Ingestion]** > **[!DNL Create Customer Profile InletId]** > **[!DNL Create Dataset]** erstellen **[!DNL customer dataset]** wird ein `CustomerProfile_dataset_id` in Postman-Umgebungsvariablen.
-1. Erstellen **[!DNL HTTP Streaming Inlet Connection]**, verwenden Sie Postman-APIs unter **[!DNL Customer Profile Ingestion > Create Customer Profile InletId]**.
+1. Erstmalige Benutzerinnen und Benutzer müssen das **[!DNL customer dataset]** und die **[!DNL HTTP Streaming Inlet Connection]** erstellen.
+1. Wenn Sie bereits das **[!DNL customer dataset]** und die **[!DNL HTTP Streaming Inlet Connection]** erstellt haben, fahren Sie bitte mit dem Schritt `5` fort.
+1. Lösen Sie **[!DNL Customer Profile Ingestion]** > **[!DNL Create Customer Profile InletId]** > **[!DNL Create Dataset]** aus, um das **[!DNL customer dataset]** zu erstellen. Dadurch wird eine `CustomerProfile_dataset_id` in den Postman-Umgebungsvariablen gespeichert.
+1. Erstellen Sie die **[!DNL HTTP Streaming Inlet Connection]** und verwenden Sie die Postman-APIs unter **[!DNL Customer Profile Ingestion > Create Customer Profile InletId]**.
 
-   1. `CustomerProfile_dataset_id` muss in Postman-Umgebungsvariablen verfügbar sein, falls nicht, siehe Schritt `3`.
-   1. Trigger **[!DNL `CREATE Base Connection`]** nach [!DNL create base connection].
-   1. Trigger **[!DNL `CREATE Source Connection`]** nach [!DNL create source connection].
-   1. Trigger **[!DNL `CREATE Target Connection`]** nach [!DNL create target connection].
-   1. Trigger **[!DNL `CREATE Dataflow`]** nach [!DNL create dataflow].
-   1. Trigger **[!DNL `GET Base Connection`]**- wird automatisch gespeichert. `CustomerProfile_inlet_id` in den postman-Umgebungsvariablen.
+   1. `CustomerProfile_dataset_id` muss in den Postman-Umgebungsvariablen vorhanden sein. Falls dies nicht der Fall ist, lesen Sie Schritt `3`.
+   1. Lösen Sie **[!DNL `CREATE Base Connection`]** aus, um [!DNL create base connection] durchzuführen.
+   1. Lösen Sie **[!DNL `CREATE Source Connection`]** aus, um [!DNL create source connection] durchzuführen.
+   1. Lösen Sie **[!DNL `CREATE Target Connection`]** aus, um [!DNL create target connection] durchzuführen.
+   1. Lösen Sie **[!DNL `CREATE Dataflow`]** aus, um [!DNL create dataflow] durchzuführen.
+   1. Lösen Sie **[!DNL `GET Base Connection`]** aus – dies speichert automatisch die `CustomerProfile_inlet_id` in den Postman-Umgebungsvariablen.
 
-1. In diesem Schritt müssen Sie `CustomerProfile_dataset_id` und `CustomerProfile_inlet_id` in Postman-Umgebungsvariablen; falls nicht, lesen Sie Schritt . `3` oder `4` bzw.
-1. Um Kunden zu erfassen, muss der Benutzer `customer_country_code`, `customer_mobile_no`, `customer_first_name`, `customer_last_name` und `email` in Postman-Umgebungsvariablen.
+1. Bei diesem Schritt müssen Sie `CustomerProfile_dataset_id` und `CustomerProfile_inlet_id` in den Postman-Umgebungsvariablen haben. Falls dies nicht der Fall ist, lesen Sie bitte den Schritt `3` bzw. `4`.
+1. Um eine Kundin oder einen Kunden aufzunehmen, muss die Benutzerin bzw. der Benutzer `customer_country_code`, `customer_mobile_no`, `customer_first_name`, `customer_last_name` und `email` in den Postman-Umgebungsvariablen speichern.
 
-   1. `customer_country_code` würde die Ländervorwahl der Mobiltelefonnummer sein, z. B. `91` oder `1`
-   1. `customer_mobile_no` eine Mobiltelefonnummer sein, z. B. `9987654321`
-   1. `customer_first_name` wäre der Vorname des Benutzers
-   1. `customer_last_name` wäre der Nachname des Benutzers
-   1. `email` die E-Mail-Adresse des Benutzers ist, ist dies wichtig, um eine eindeutige E-Mail-ID zu verwenden, damit ein neues Profil erfasst werden kann.
+   1. `customer_country_code` ist die Landesvorwahl der Handynummer, z. B. `91` oder `1`
+   1. `customer_mobile_no` ist die Handynummer, z. B. `9987654321`
+   1. `customer_first_name` ist der Vorname der Benutzerin bzw. des Benutzers
+   1. `customer_last_name` ist der Nachname der Benutzerin bzw. des Benutzers
+   1. `email` ist die E-Mail-Adresse der Benutzerin bzw. des Benutzers. Es ist wichtig, eine eindeutige E-Mail-Adresse zu verwenden, damit ein neues Profil aufgenommen werden kann.
 
-1. Postman-Anforderung aktualisieren **[!DNL Customer Ingestion]** > **[!DNL Customer Streaming Ingestion]** den bevorzugten Kanal des Kunden zu ändern; standardmäßig [!DNL `email`] wird in der Anfrage konfiguriert.
+1. Aktualisieren Sie die Postman-Anfrage **[!DNL Customer Ingestion]** > **[!DNL Customer Streaming Ingestion]**, um den bevorzugten Kanal der Kundin bzw. des Kunden zu ändern. Standardmäßig ist [!DNL `email`] in der Anfrage konfiguriert.
 
    ```js
    "consents": {
@@ -117,7 +117,7 @@ Es gibt 2 Möglichkeiten, die Journey zu veröffentlichen. Sie können eine davo
    }
    ```
 
-1. Ändern des bevorzugten Kanals in `sms` oder `push` und geben Sie den entsprechenden Kanalwert an `y` und `n` auf andere Werte, z. B.
+1. Ändern Sie den bevorzugten Kanal in `sms` oder `push` und setzen Sie den jeweiligen Kanalwert auf `y`, aber auf `n` zu anderen Werten, z. B.
 
    ```js
    "consents": {
@@ -136,42 +136,42 @@ Es gibt 2 Möglichkeiten, die Journey zu veröffentlichen. Sie können eine davo
    }
    ```
 
-1. Endlicher Trigger **[!DNL `Customer Profile Ingestion > Customer Profile Streaming Ingestion`]** , um das Kundenprofil aufzunehmen.
+1. Lösen Sie schließlich **[!DNL `Customer Profile Ingestion > Customer Profile Streaming Ingestion`]** aus, um das Kundenprofil aufzunehmen.
 
 ## Aufnahmeereignis
 
-1. Erstmalige Erstellung des **[!DNL event dataset]** und **[!DNL HTTP Streaming Inlet Connection for events]**
-1. Wenn Sie bereits die **[!DNL event dataset]** und **[!DNL HTTP Streaming Inlet Connection for events]**, überspringen Sie bitte zum Schritt . `5`.
-1. Trigger **[!DNL `Schemas Data Ingestion > AEP Demo Schema Ingestion > Create AEP Demo Schema InletId > Create Dataset`]** erstellen **[!DNL event dataset]**, speichert dies eine `AEPDemoSchema_dataset_id` in Postman-Umgebungsvariablen
-1. Erstellen **[!DNL HTTP Streaming Inlet Connection for events]**, verwenden Sie Postman-APIs unter **[!DNL Schemas Data Ingestion]** > **[!DNL AEP Demo Schema Ingestion]** > **[!DNL Create AEP Demo Schema InletId]**.
+1. Erstmalige Benutzerinnen bzw. Benutzer müssen das **[!DNL event dataset]** und die **[!DNL HTTP Streaming Inlet Connection for events]** erstellen
+1. Wenn Sie bereits das **[!DNL event dataset]** und die **[!DNL HTTP Streaming Inlet Connection for events]** erstellt haben, fahren Sie bitte mit dem Schritt `5` fort.
+1. Lösen Sie **[!DNL `Schemas Data Ingestion > AEP Demo Schema Ingestion > Create AEP Demo Schema InletId > Create Dataset`]** aus, um das **[!DNL event dataset]** zu erstellen. Dadurch wird eine `AEPDemoSchema_dataset_id` in den Postman-Umgebungsvariablen gespeichert.
+1. Erstellen Sie eine **[!DNL HTTP Streaming Inlet Connection for events]** und verwenden Sie die Postman-APIs unter **[!DNL Schemas Data Ingestion]** > **[!DNL AEP Demo Schema Ingestion]** > **[!DNL Create AEP Demo Schema InletId]**.
 
-   1. `AEPDemoSchema_dataset_id` muss in Postman-Umgebungsvariablen verfügbar sein, falls nicht, siehe Schritt `3`
-   1. Trigger **[!DNL `CREATE Base Connection`]** nach [!DNL create base connection]
-   1. Trigger **[!DNL `CREATE Source Connection`]** nach [!DNL create source connection]
-   1. Trigger **[!DNL `CREATE Target Connection`]** nach [!DNL create target connection]
-   1. Trigger **[!DNL `CREATE Dataflow`]** nach [!DNL create dataflow]
-   1. Trigger **[!DNL `GET Base Connection`]**- wird automatisch gespeichert. `AEPDemoSchema_inlet_id` in den postman-Umgebungsvariablen
+   1. `AEPDemoSchema_dataset_id` muss in den Postman-Umgebungsvariablen vorhanden sein. Falls dies nicht der Fall ist, lesen Sie Schritt `3`
+   1. Lösen Sie **[!DNL `CREATE Base Connection`]** aus, um [!DNL create base connection] durchzuführen
+   1. Lösen Sie **[!DNL `CREATE Source Connection`]** aus, um [!DNL create source connection] durchzuführen
+   1. Lösen Sie **[!DNL `CREATE Target Connection`]** aus, um [!DNL create target connection] durchzuführen
+   1. Lösen Sie **[!DNL `CREATE Dataflow`]** aus, um [!DNL create dataflow] durchzuführen
+   1. Lösen Sie **[!DNL `GET Base Connection`]** aus – dies speichert automatisch `AEPDemoSchema_inlet_id` in den Postman-Umgebungsvariablen
 
-1. In diesem Schritt müssen Sie `AEPDemoSchema_dataset_id` und `AEPDemoSchema_inlet_id` in Postman-Umgebungsvariablen, falls nicht, lesen Sie Schritt . `3` oder `4` jeweils
-1. Um Ereignisse zu erfassen, muss der Benutzer die Zeitvariable ändern `timestamp` im Anfragetext von **[!DNL Schemas Data Ingestion]** > **[!DNL AEP Demo Schema Ingestion]** > **[!DNL AEP Demo Schema Streaming Ingestion]** auf Postman.
+1. Bei diesem Schritt müssen Sie `AEPDemoSchema_dataset_id` und `AEPDemoSchema_inlet_id` in den Postman-Umgebungsvariablen haben. Falls dies nicht der Fall ist, lesen Sie bitte den Schritt `3` bzw. `4` 
+1. Um ein Ereignis aufzunehmen, muss die Benutzerin bzw. der Benutzer die Zeitvariable `timestamp` im Anfragetext von **[!DNL Schemas Data Ingestion]** > **[!DNL AEP Demo Schema Ingestion]** > **[!DNL AEP Demo Schema Streaming Ingestion]** in Postman ändern.
 
-   1. `timestamp` zum Zeitpunkt des Ereignisses verwenden Sie den aktuellen Zeitstempel, z. B. `2023-07-21T16:37:52+05:30` die Zeitzone entsprechend Ihren Anforderungen anpassen.
+   1. `timestamp` ist die Zeit des Auftretens des Ereignisses. Verwenden Sie den aktuellen Zeitstempel, z. B. `2023-07-21T16:37:52+05:30`, und passen Sie die Zeitzone nach Ihren Bedürfnissen an.
 
-1. Trigger **[!DNL Schemas Data Ingestion > AEP Demo Schema Ingestion > AEP Demo Schema Streaming Ingestion]** , um das Ereignis zu erfassen, sodass Journey ausgelöst werden kann
+1. Lösen Sie **[!DNL Schemas Data Ingestion > AEP Demo Schema Ingestion > AEP Demo Schema Streaming Ingestion]** aus, um das Ereignis aufzunehmen, damit die Journey ausgelöst werden kann
 
-## Endgültige Validierung
+## Abschließende Validierung
 
-Sie müssen eine Nachricht für den ausgewählten bevorzugten Kanal erhalten, der in **[!DNL Ingest the Customer Profile]** Schritt `8`
+Sie müssen eine Nachricht auf dem von Ihnen gewählten bevorzugten Kanal erhalten, der in **[!DNL Ingest the Customer Profile]** im Schritt `8` verwendet wird.
 
-* `SMS` wenn der bevorzugte Kanal `sms` on `customer_country_code` und `customer_mobile_no`
-* `Email` wenn der bevorzugte Kanal `email` on `email`
+* `SMS`, wenn der bevorzugte Kanal `sms` für `customer_country_code` und `customer_mobile_no` ist
+* `Email` wenn der bevorzugte Kanal `email` für `email` ist
 
-Sie können auch `Journey Report`, um es zu aktivieren `Journey Object` on `Bill of Materials page` werden Sie zu `Journey Details page`.
+Alternativ können Sie auch `Journey Report` überprüfen. Klicken Sie dazu auf `Journey Object` auf der `Bill of Materials page`, und Sie werden zur `Journey Details page` weitergeleitet.
 
-Für alle veröffentlichten Journey-Benutzer muss ein **[!UICONTROL Bericht anzeigen]** button
-![Journey-Berichtsseite](../assets/journey-report-page.png)
+Für jede veröffentlichte Journey muss die Benutzerin bzw. der Benutzer eine Schaltfläche **[!UICONTROL Bericht anzeigen]** erhalten
+![Seite „Journey-Bericht“](../assets/journey-report-page.png)
 
 
 ## Bereinigen
 
-Verfügen Sie nicht über mehrere Instanzen von `Journey` gleichzeitig ausgeführt werden, stoppen Sie die Journey, wenn sie erst nach Abschluss der Validierung validiert werden soll.
+Bitte lassen Sie nicht mehrere Instanzen von `Journey` gleichzeitig laufen, sondern stoppen Sie die Journey, wenn sie nur zur Validierung dient, sobald die Validierung abgeschlossen ist.
