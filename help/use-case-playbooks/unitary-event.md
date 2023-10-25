@@ -3,9 +3,9 @@ title: Unitäres Ereignis
 description: Dies ist eine Anleitungsseite für die Simulation des Typs [!UICONTROL Unitäres Ereignis] der Journey-Validierung.
 exl-id: 314f967c-e10f-4832-bdba-901424dc2eeb
 source-git-commit: 194667c26ed002be166ab91cc778594dc1f09238
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '889'
-ht-degree: 37%
+ht-degree: 100%
 
 ---
 
@@ -33,8 +33,8 @@ ht-degree: 37%
 
 >[!TIP]
 >
->Wenn Sie ein Terminal zum Ausführen der curls verwenden, können Sie Variablenwerte festlegen, bevor Sie die curls ausführen, damit diese Werte nicht in einzelnen curls ersetzt werden müssen.
->Beispiel: Wenn Sie `ORG_ID=************@AdobeOrg`, ersetzt Shell automatisch jedes Vorkommen von `$ORG_ID` mit dem -Wert, damit Sie die unten aufgeführten curls ohne Änderung kopieren, einfügen und ausführen können.
+>Wenn Sie ein Terminal zum Ausführen der cURLs verwenden, können Sie Variablenwerte festlegen, bevor Sie die cURLs ausführen, damit diese Werte nicht in einzelnen cURLs ersetzt werden müssen.
+>Beispiel: Wenn Sie `ORG_ID=************@AdobeOrg` festlegen, ersetzt Shell automatisch jedes Vorkommen von `$ORG_ID` durch den Wert, damit Sie die unten aufgeführten cURLs ohne Änderung kopieren, einfügen und ausführen können.
 >
 > Die folgenden Variablen werden in diesem Dokument verwendet
 >
@@ -64,11 +64,11 @@ ht-degree: 37%
 >
 > CUSTOMER_MOBILE_NUMBER
 >
-> CUSTOMER_FIRSTNAME
+> CUSTOMER_FIRST_NAME
 >
 > CUSTOMER_LAST_NAME
 >
-> E-MAIL
+> EMAIL
 >
 > EVENT_SCHEMA_REF
 >
@@ -84,7 +84,7 @@ ht-degree: 37%
 >
 > EVENT_INLET_URL
 >
-> ZEITSTEMPEL
+> TIMESTAMP
 >
 > UNIQUE_EVENT_ID
 
@@ -102,7 +102,7 @@ Es gibt zwei Möglichkeiten, die Journey zu veröffentlichen. Sie können belieb
 
 1. **Verwenden von cURL**
 
-   1. Veröffentlichen Sie die Journey. Die Antwort enthält die Auftrags-ID, die im nächsten Schritt benötigt wird, um den Journey-Veröffentlichungsstatus abzurufen.
+   1. Veröffentlichen Sie die Journey. Die Antwort enthält die Auftrags-ID, die im nächsten Schritt benötigt wird, um den Veröffentlichungsstatus der Journey abzurufen.
 
       ```bash
       curl --location --request POST "https://journey-private.adobe.io/authoring/jobs/journeyVersions/$JOURNEY_ID/deploy" \
@@ -114,7 +114,7 @@ Es gibt zwei Möglichkeiten, die Journey zu veröffentlichen. Sie können belieb
       --header "Content-Type: application/json" 
       ```
 
-   1. Journey-Publish kann einige Zeit dauern, sodass, um den Status zu überprüfen ausgeführt unter cURL, bis die `response.status` is `SUCCESS`, stellen Sie sicher, dass Sie 10-15 Sekunden warten, wenn die Journey-Veröffentlichung zeitaufwendig ist.
+   1. Die Veröffentlichung einer Journey kann einige Zeit in Anspruch nehmen. Um den Status zu überprüfen, führen Sie die folgende cURL aus, bis `response.status` `SUCCESS` ist. Warten Sie 10–15 Sekunden, wenn die Veröffentlichung der Journey einige Zeit dauert.
 
       ```bash
       curl --location "https://journey-private.adobe.io/authoring/jobs/$JOB_ID" \
@@ -129,7 +129,7 @@ Es gibt zwei Möglichkeiten, die Journey zu veröffentlichen. Sie können belieb
 
 >[!TIP]
 >
->Wenn Ihr E-Mail-Anbieter Plus-E-Mails unterstützt, können Sie dieselbe E-Mail-Adresse wiederverwenden, indem Sie `+<variable>` in Ihre E-Mail, z. B. `usertest@email.com` kann fortgesetzt werden als `usertest+v1@email.com` oder `usertest+24jul@email.com`. Dies kann hilfreich sein, wenn jedes Mal ein neues Profil, jedoch mit derselben E-Mail-ID, verwendet werden soll.
+>Wenn Ihr E-Mail-Anbieter Plus-E-Mails unterstützt, können Sie dieselbe E-Mail-Adresse wiederverwenden, indem Sie `+<variable>` an Ihre E-Mail-Adresse anhängen. Beispielsweise kann `usertest@email.com` als `usertest+v1@email.com` oder `usertest+24jul@email.com` wiederverwendet werden. Dies kann hilfreich sein, wenn jedes Mal ein neues Profil, jedoch mit derselben E-Mail-ID, verwendet werden soll.
 >
 >P.S.: Plus-E-Mails sind eine konfigurierbare Funktion, die vom E-Mail-Anbieter unterstützt werden muss. Prüfen Sie bitte, ob Sie E-Mails an solche Adressen erhalten können, bevor Sie sie im Test verwenden.
 
@@ -168,7 +168,7 @@ Es gibt zwei Möglichkeiten, die Journey zu veröffentlichen. Sie können belieb
 
    Die Antwort hat das Format `"@/dataSets/<PROFILE_DATASET_ID>"`.
 
-1. Erstellen **[!DNL HTTP Streaming Inlet Connection]** mit Hilfe der folgenden Schritte.
+1. Erstellen Sie **[!DNL HTTP Streaming Inlet Connection]** mithilfe der folgenden Schritte.
    1. Erstellen Sie eine Basisverbindung.
 
       ```bash
@@ -194,7 +194,7 @@ Es gibt zwei Möglichkeiten, die Journey zu veröffentlichen. Sie können belieb
       }'
       ```
 
-      Beziehen Sie die Basis-Verbindungs-ID aus der Antwort und verwenden Sie sie anstelle von `PROFILE_BASE_CONNECTION_ID` in folgenden cURLs
+      Beziehen der ID der Basisverbindung aus der Antwort und Verwenden der ID anstelle von `PROFILE_BASE_CONNECTION_ID` in den folgenden cURLs
 
    1. Erstellen Sie die Quellverbindung.
 
@@ -216,7 +216,7 @@ Es gibt zwei Möglichkeiten, die Journey zu veröffentlichen. Sie können belieb
       }'
       ```
 
-      Abrufen der Quell-Verbindungs-ID aus der Antwort und Verwenden Sie sie anstelle von `PROFILE_SOURCE_CONNECTION_ID`
+      Abrufen der ID der Quellverbindung aus der Antwort und Verwenden der ID anstelle von `PROFILE_SOURCE_CONNECTION_ID`
 
    1. Erstellen Sie eine Zielverbindung.
 
@@ -248,7 +248,7 @@ Es gibt zwei Möglichkeiten, die Journey zu veröffentlichen. Sie können belieb
       }'
       ```
 
-      Abrufen der Ziel-Verbindungs-ID aus der Antwort und Verwenden Sie sie anstelle von `PROFILE_TARGET_CONNECTION_ID`
+      Abrufen der ID der Zielverbindung aus der Antwort und Verwenden der ID anstelle von `PROFILE_TARGET_CONNECTION_ID`
 
    1. Erstellen Sie einen Datenfluss.
 
@@ -275,7 +275,7 @@ Es gibt zwei Möglichkeiten, die Journey zu veröffentlichen. Sie können belieb
       }'
       ```
 
-   1. Grundlegende Verbindung abrufen. Das Ergebnis enthält inletUrl , das zum Senden von Profildaten erforderlich ist.
+   1. Rufen Sie die Basisverbindung ab. Das Ergebnis enthält inletUrl, das zum Senden von Profildaten erforderlich ist.
 
       ```bash
       curl --location "https://platform.adobe.io/data/foundation/flowservice/connections/$PROFILE_BASE_CONNECTION_ID" \
@@ -286,17 +286,17 @@ Es gibt zwei Möglichkeiten, die Journey zu veröffentlichen. Sie können belieb
       --header "x-api-key: $API_KEY"
       ```
 
-      Rufen Sie inletUrl aus der Antwort ab und verwenden Sie es anstelle von `PROFILE_INLET_URL`
+      Abrufen der inletUrl aus der Antwort und Verwenden der inletUrl anstelle von `PROFILE_INLET_URL`
 
-1. In diesem Schritt muss der Benutzer über die Werte `PROFILE_DATASET_ID` und `PROFILE_INLET_URL`Ist dies nicht der Fall, lesen Sie bitte den Schritt . `3` oder `4` bzw.
-1. Um Kunden zu erfassen, muss der Benutzer `CUSTOMER_MOBILE_NUMBER`, `CUSTOMER_FIRST_NAME`, `CUSTOMER_LAST_NAME` und `EMAIL` in unterhalb von cURLs.
+1. In diesem Schritt muss die Benutzerin bzw. der Benutzer die Werte `PROFILE_DATASET_ID` und `PROFILE_INLET_URL` haben. Ist dies nicht der Fall, lesen Sie bitte den Schritt `3` bzw. `4`.
+1. Um die Kundin oder den Kunden zu erfassen, muss die Benutzerin bzw. der Benutzer `CUSTOMER_MOBILE_NUMBER`, `CUSTOMER_FIRST_NAME`, `CUSTOMER_LAST_NAME` und `EMAIL` in den folgenden cURLs ersetzen.
 
    1. `CUSTOMER_MOBILE_NUMBER` ist die Handynummer, z. B. `+1 000-000-0000`
    1. `CUSTOMER_FIRST_NAME` ist der Vorname der Benutzerin bzw. des Benutzers
    1. `CUSTOMER_LAST_NAME` ist der Nachname der Benutzerin bzw. des Benutzers
    1. `EMAIL` ist die E-Mail-Adresse der Benutzerin bzw. des Benutzers. Es ist wichtig, eine eindeutige E-Mail-Adresse zu verwenden, damit ein neues Profil aufgenommen werden kann.
 
-1. Führen Sie schließlich den curl aus, um das Kundenprofil aufzunehmen. Aktualisieren `body.xdmEntity.consents.marketing.preferred` nach `email`, `sms`oder `push` basierend auf den Kanälen, die Sie überprüfen möchten. Geben Sie auch entsprechende `val` nach `y`.
+1. Führen Sie schließlich die cURL aus, um das Kundenprofil aufzunehmen. Aktualisieren Sie `body.xdmEntity.consents.marketing.preferred` auf `email`, `sms` oder `push` basierend auf den Kanälen, die Sie verifizieren möchten. Setzen Sie `val` entsprechend auch auf `y` fest.
 
    ```bash
    curl --location "$PROFILE_INLET_URL?synchronousValidation=true" \
@@ -354,7 +354,7 @@ Es gibt zwei Möglichkeiten, die Journey zu veröffentlichen. Sie können belieb
    }'
    ```
 
-## Journey-Trigger-Ereignis erfassen
+## Aufnehmen eines Journey-Trigger-Ereignisses
 
 1. Erstmalige Benutzerinnen bzw. Benutzer müssen das **[!DNL event dataset]** und die **[!DNL HTTP Streaming Inlet Connection for events]** erstellen
 1. Wenn Sie bereits das **[!DNL event dataset]** und die **[!DNL HTTP Streaming Inlet Connection for events]** erstellt haben, fahren Sie bitte mit dem Schritt `5` fort.
@@ -391,7 +391,7 @@ Es gibt zwei Möglichkeiten, die Journey zu veröffentlichen. Sie können belieb
 
    Die Antwort hat das Format `"@/dataSets/<EVENT_DATASET_ID>"`
 
-1. Erstellen **[!DNL HTTP Streaming Inlet Connection for events]**  mit Hilfe der folgenden Schritte.
+1. Erstellen Sie **[!DNL HTTP Streaming Inlet Connection for events]** mithilfe der folgenden Schritte.
    <!-- TODO: Is the name unique? If so, we may need to generate and provide in variables.txt-->
    1. Erstellen Sie eine Basisverbindung.
 
@@ -418,7 +418,7 @@ Es gibt zwei Möglichkeiten, die Journey zu veröffentlichen. Sie können belieb
       }'
       ```
 
-      Beziehen Sie die Basis-Verbindungs-ID aus der Antwort und verwenden Sie sie anstelle von `EVENT_BASE_CONNECTION_ID`
+      Beziehen der ID der Basisverbindung aus der Antwort und Verwenden der ID anstelle von `EVENT_BASE_CONNECTION_ID`
 
    1. Erstellen Sie die Quellverbindung.
 
@@ -440,7 +440,7 @@ Es gibt zwei Möglichkeiten, die Journey zu veröffentlichen. Sie können belieb
       }'
       ```
 
-      Abrufen der Quell-Verbindungs-ID aus der Antwort und Verwenden Sie sie anstelle von `EVENT_SOURCE_CONNECTION_ID`
+      Abrufen der ID der Quellverbindung aus der Antwort und Verwenden der ID anstelle von `EVENT_SOURCE_CONNECTION_ID`
 
    1. Erstellen Sie eine Zielverbindung.
 
@@ -472,7 +472,7 @@ Es gibt zwei Möglichkeiten, die Journey zu veröffentlichen. Sie können belieb
       }'
       ```
 
-      Abrufen der Ziel-Verbindungs-ID aus der Antwort und Verwenden Sie sie anstelle von `EVENT_TARGET_CONNECTION_ID`
+      Abrufen der ID der Zielverbindung aus der Antwort und Verwenden der ID anstelle von `EVENT_TARGET_CONNECTION_ID`
 
    1. Erstellen Sie einen Datenfluss.
 
@@ -499,7 +499,7 @@ Es gibt zwei Möglichkeiten, die Journey zu veröffentlichen. Sie können belieb
       }'
       ```
 
-   1. Grundlegende Verbindung abrufen. Das Ergebnis enthält inletUrl , das zum Senden von Profildaten erforderlich ist.
+   1. Rufen Sie die Basisverbindung ab. Das Ergebnis enthält inletUrl, das zum Senden von Profildaten erforderlich ist.
 
    ```bash
    curl --location "https://platform.adobe.io/data/foundation/flowservice/connections/$EVENT_BASE_CONNECTION_ID" \
@@ -510,14 +510,14 @@ Es gibt zwei Möglichkeiten, die Journey zu veröffentlichen. Sie können belieb
        --header "Content-Type: application/json" 
    ```
 
-   Rufen Sie inletUrl aus der Antwort ab und verwenden Sie es anstelle von `EVENT_INLET_URL`
+   Abrufen der inletUrl aus der Antwort und Verwenden der inletUrl anstelle von `EVENT_INLET_URL`
 
-1. In diesem Schritt muss der Benutzer über die Werte `EVENT_DATASET_ID` und `EVENT_INLET_URL`Ist dies nicht der Fall, lesen Sie bitte den Schritt . `3` oder `4` bzw.
-1. Um Ereignisse zu erfassen, muss der Benutzer die Zeitvariable ändern `TIMESTAMP` im Anfragetext von cURL unten.
+1. In diesem Schritt muss die Benutzerin bzw. der Benutzer die Werte `EVENT_DATASET_ID` und `EVENT_INLET_URL` haben. Ist dies nicht der Fall, lesen Sie bitte den Schritt `3` bzw. `4`.
+1. Um ein Ereignis aufzunehmen, muss die Benutzerin bzw. der Benutzer die Zeitvariable `TIMESTAMP` im Anfragetext der folgenden cURL ändern.
 
-   1. Ersetzen `body.xdmEntity` mit dem Inhalt der heruntergeladenen Ereignis-JSON.
-   1. `TIMESTAMP` zum Zeitpunkt des Ereignisses verwenden Sie den Zeitstempel in der UTC-Zeitzone, z. B. `2023-09-05T23:57:00.071+00:00`.
-   1. Eindeutigen Wert für Variable festlegen `UNIQUE_EVENT_ID`.
+   1. Ersetzen Sie `body.xdmEntity` durch die Inhalte der heruntergeladenen Ereignis-JSON.
+   1. `TIMESTAMP` ist der Zeitpunkt, als das Ereignis aufgetreten ist. Verwenden Sie den Zeitstempel in der UTC-Zeitzone, z. B. `2023-09-05T23:57:00.071+00:00`.
+   1. Legen Sie einen eindeutigen Wert für die Variable `UNIQUE_EVENT_ID` fest.
 
    ```bash
    curl --location "$EVENT_INLET_URL?synchronousValidation=true" \
