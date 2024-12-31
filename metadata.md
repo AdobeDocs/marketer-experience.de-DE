@@ -8,8 +8,8 @@ git-repo: https://github.com/AdobeDocs/marketer-experience.de-DE
 hide: true
 source-git-commit: 0b32af4312476f906ff3a0c35cb46d22c6265b4f
 workflow-type: tm+mt
-source-wordcount: '63'
-ht-degree: 93%
+source-wordcount: '53'
+ht-degree: 98%
 
 ---
 
