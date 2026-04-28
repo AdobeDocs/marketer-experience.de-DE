@@ -4,8 +4,8 @@ description: Dies ist eine Anleitungsseite für die Simulation des Typs [!UICONT
 exl-id: 314f967c-e10f-4832-bdba-901424dc2eeb
 source-git-commit: 194667c26ed002be166ab91cc778594dc1f09238
 workflow-type: tm+mt
-source-wordcount: '839'
-ht-degree: 100%
+source-wordcount: '849'
+ht-degree: 98%
 
 ---
 
@@ -611,12 +611,12 @@ Es gibt zwei Möglichkeiten, die Journey zu veröffentlichen. Sie können belieb
                "timestamp": "'$TIMESTAMP'",
                "web": {
                    "webInteraction": {
-                       "URL": "https://experienceleague.adobe.com/docs/experience-platform/edge/data-collection/collect-commerce-data.html?lang=de",
+                       "URL": "https://experienceleague.adobe.com/docs/experience-platform/edge/data-collection/collect-commerce-data.html?lang=en",
                        "name": "Sample value",
                        "region": "Sample value"
                    },
                    "webPageDetails": {
-                       "URL": "https://experienceleague.adobe.com/docs/experience-platform/edge/data-collection/collect-commerce-data.html?lang=de",
+                       "URL": "https://experienceleague.adobe.com/docs/experience-platform/edge/data-collection/collect-commerce-data.html?lang=en",
                        "isErrorPage": false,
                        "isHomePage": false,
                        "name": "Sample value",
@@ -647,8 +647,8 @@ Sie müssen eine Nachricht auf dem von Ihnen gewählten bevorzugten Kanal erhalt
 
 Alternativ können Sie auch `Journey Report` überprüfen. Klicken Sie dazu auf `Journey Object` auf der `Bill of Materials page`, und Sie werden zur `Journey Details page` weitergeleitet.
 
-Für jede veröffentlichte Journey muss die Benutzerin bzw. der Benutzer eine Schaltfläche **[!UICONTROL Bericht anzeigen]** erhalten
-![Seite „Journey-Bericht“](../assets/journey-report-page.png)
+Für jeden veröffentlichten Journey-Benutzer muss die Schaltfläche **[!UICONTROL Bericht anzeigen]** angezeigt werden
+![Berichtseite Journey](../assets/journey-report-page.png)
 
 
 ## Bereinigen
