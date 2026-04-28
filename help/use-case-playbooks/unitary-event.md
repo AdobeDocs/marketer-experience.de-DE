@@ -34,7 +34,7 @@ ht-degree: 98%
 >[!TIP]
 >
 >Wenn Sie ein Terminal zum Ausführen der cURLs verwenden, können Sie Variablenwerte festlegen, bevor Sie die cURLs ausführen, damit diese Werte nicht in einzelnen cURLs ersetzt werden müssen.
->Beispiel: Wenn Sie `ORG_ID=************@AdobeOrg` festlegen, ersetzt Shell automatisch jedes Vorkommen von `$ORG_ID` durch den Wert, damit Sie die unten aufgeführten cURLs ohne Änderung kopieren, einfügen und ausführen können.
+>Beispiel: Wenn Sie `ORG_ID=**&#x200B;**&#x200B;**&#x200B;**&#x200B;**&#x200B;**@AdobeOrg` festlegen, ersetzt Shell automatisch jedes Vorkommen von `$ORG_ID` durch den Wert, damit Sie die unten aufgeführten cURLs ohne Änderung kopieren, einfügen und ausführen können.
 >
 > Die folgenden Variablen werden in diesem Dokument verwendet
 >
